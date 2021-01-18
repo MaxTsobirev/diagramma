@@ -25,3 +25,22 @@ y7=(-0.5)*x7**2+1.5
 plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7)
 plt.show()
 
+
+fail=open("C:/file/dannie.txt","r")
+mas1=[]
+mas2=[]
+for line in fail:
+    n=line.find(",")
+    mas1.append(line[0:n].strip())
+    mas2.append(int(line[n+1:len(line)].strip()))
+fail.close()
+
+
+title = "Данные о ИТ безопасности"
+plt.title(title)
+plt.grid(True)
+
+color_rectangle = np.random.rand(7, 3)
+plt.barh(mas1, mas2, color=color_rectangle)
+
+plt.show()
